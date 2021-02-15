@@ -48,7 +48,7 @@ html, body, #root {
 .city {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     max-width:40%;
     min-width:10%;
@@ -82,12 +82,14 @@ p {
 
 .city-name {
     font-size: 2em;
+    text-transform: uppercase;
 }
 
 .city-name sup {
     padding: 0.2em 0.6em;
     margin-left: 0.2em;
     border-radius: 30px;
+    text-align: center; 
     color: #fff;
     background: #ff8c00;
 }
@@ -102,6 +104,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
