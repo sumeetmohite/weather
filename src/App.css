@@ -28,8 +28,11 @@ html, body, #root {
     font-size:1.2rem;
     font-family: 'Poppins', sans-serif;
     outline: none;
+    max-width:40%;
+    min-width:10%;
+    max-height:0.5rem;
     padding: 20px 7%;
-    border-radius: 20px;
+    border-radius: 15px;
     border: none;
     margin-bottom: 5%;
     color: #ffffff;
@@ -47,6 +50,8 @@ html, body, #root {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    max-width:40%;
+    min-width:10%;
     padding: 40px 8%;
     border-radius: 20px;
     background: rgba(0, 0, 0, 0.75);
