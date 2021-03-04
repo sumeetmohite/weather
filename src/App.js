@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {motion} from 'framer-motion';
 import './App.css';
 import {fetchWeather} from './api/fetchWeather';
 
@@ -38,10 +39,12 @@ const App = () => {
     }
     
     return (
-        <div className='main-container' style={{backgroundImage:`url(${image})`}}>
+        <motion.div className='main-container' style={{backgroundImage:`url(${image})`}}
+            
+        >
             <input type='text' className='search' placeholder='Search city...' value={query} onChange={(e) => setQuery(e.target.value)} onKeyPress={search} />
            { weather.main && (
-               <div className='city'>
+               <motion.div className='city' animate={{rotateZ:360 }}>
                    <h2 className='city-name'>
                        <span>{weather.name}</span>
                        <sup>{weather.sys.country}</sup>
@@ -55,10 +58,10 @@ const App = () => {
                         <p>{weather.weather[0].description}</p>
                     </div>
 
-               </div>
+               </motion.div>
            )
            }
-        </div>
+        </motion.div>
     )
 }
 
