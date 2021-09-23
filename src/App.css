@@ -1,118 +1,147 @@
-html, body, #root {
-    font-family: 'Poppins', sans-serif;
-    background: #0a1f44;
-    color: #ffffff;
-    height: 100%;
-    margin: 0;
+html,
+body,
+#root {
+  font-family: 'Poppins', sans-serif;
+  background: #0a1f44;
+  color: #ffffff;
+  height: 100%;
+  margin: 0;
 }
 
 .main-container {
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.418) );
-    background-size: cover;
-    background-position: center;
+  background: #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
 }
 
-.main-container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color:rgb(211, 211, 211);
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(211, 211, 211);
   opacity: 1; /* Firefox */
 }
 
-.search {
-    font-size:1.2rem;
-    font-family: 'Poppins', sans-serif;
-    outline: none;
-    max-width:40%;
-    min-width:10%;
-    max-height:0.5rem;
-    padding: 20px 7%;
-    border-radius: 15px;
-    border: none;
-    margin-bottom: 5%;
-    color: #ffffff;
-    background: rgba(0, 0, 0, 0.60);
-    
+.widget-container {
+  padding: 2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4rem;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-.search:hover{
-    background: rgba(0, 0, 0, 0.75);
-    transform: scale(1.03);
+@media only screen and (min-width: 768px) {
+  .widget-container {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .widget-container {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 499px) {
+  .widget-container {
+    width: 80%;
+  }
+}
+
+.search {
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  outline: none;
+  height: 2.5rem;
+  width: 90%;
+  border-radius: 2rem;
+  border: none;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 1rem 0 1rem 0;
+  padding: 0.5rem 0 0.4rem 0;
+}
+
+.search:hover {
+  background: rgba(0, 0, 0, 0.75);
 }
 
 .city {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    max-width:40%;
-    min-width:10%;
-    padding: 40px 8%;
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.75);
-    box-shadow: 5px 10px 18px #181717;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 90%;
+  padding: 1rem 0 1rem 0;
+  border-radius: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-.city:hover{
-    transform: scale(1.03);
+.city:hover {
+  transform: scale(1.03);
 }
 
 p {
-    margin-top: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .city-temp {
-    font-size: 5rem;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #ffffff;
-    text-align: center;
+  font-size: 5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #ffffff;
+  text-align: center;
 }
 
 .city sup {
-    font-size: 0.5em;
+  font-size: 0.5em;
 }
 
 .city-name {
-    font-size: 2em;
-    text-transform: uppercase;
+  font-size: 2em;
+  text-transform: uppercase;
 }
 
 .city-name sup {
-    padding: 0.2em 0.6em;
-    margin-left: 0.2em;
-    border-radius: 30px;
-    text-align: center; 
-    color: #fff;
-    background: #ff8c00;
+  padding: 0.2em 0.6em;
+  margin-left: 0.2em;
+  border-radius: 30px;
+  text-align: center;
+  color: #fff;
+  background: #ff8c00;
 }
 
 .city-icon {
-    margin-top: 10px;
-    width: 100px;
-    height: 100px;
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
 }
 
 .info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  min-width: 100% relative;
+  align-items: center;
+  text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
-    .search {
-        padding: 20px 15%;
-    }
-
-    .city {
-        padding: 40px 20%;
-    }
+.bottom-row {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.bottom-column {
+  text-align: center;
+  width: 50%;
 }

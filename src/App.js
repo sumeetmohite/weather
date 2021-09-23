@@ -2,36 +2,44 @@ import React, {useState} from 'react';
 import {motion} from 'framer-motion';
 import './App.css';
 import {fetchWeather} from './api/fetchWeather';
+import moment from 'moment';
 
 const App = () => {
 
-    const[image, setImage] = useState("https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
-
     const[query, setQuery] = useState('');
     const[weather, setWeather] = useState('');
+    const[date, setDate] = useState('');
+    const[cardBg, setCardBg] = useState('');
+
 
     const search = async(e) => {
         if(e.key === 'Enter'){
             const data = await fetchWeather(query);
             setWeather(data);
             console.log(data);
+            let now = moment(data.dt*1000).format('MMMM Do YYYY, h:mm a');
+            setDate(now)
+            let time = new Date(data.dt*1000)
+            time = time.getHours();
+            console.log(time)
+
             if(data.weather[0].main == 'Clear'){
-                setImage("https://images.unsplash.com/photo-1523913950023-c47b5ae5b164?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80")
+                setCardBg('linear-gradient(to right, #2980b9, #6dd5fa, #ffffff)')
             }
             if(data.weather[0].main == 'Thunderstorm'){
-                setImage("https://images.unsplash.com/photo-1529220100082-80957b04a221?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1301&q=80");
+                setCardBg('linear-gradient(to right, #659999, #f4791f)')
             }
             if(data.weather[0].main == 'Drizzle'){
-                setImage("https://images.unsplash.com/photo-1556485689-33e55ab56127?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+                setCardBg('linear-gradient(to right, #2c3e50, #3498db)')
             }
             if(data.weather[0].main == 'Rain'){
-                setImage("https://images.unsplash.com/photo-1496034663057-6245f11be793?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80");
+               setCardBg('linear-gradient(to right, #1a2980, #26d0ce)')
             }
             if(data.weather[0].main == 'Snow'){
-                setImage("https://images.unsplash.com/photo-1491002052546-bf38f186af56?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1383&q=80");
+                setCardBg('linear-gradient(to right, #403b4a, #e7e9bb)')
             }
             if(data.weather[0].main == 'Clouds'){
-                setImage("https://images.unsplash.com/photo-1532939198640-a7f0da02b62f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
+                setCardBg('linear-gradient(to right, #bdc3c7, #2c3e50)')
             }
             
             setQuery('');
@@ -39,12 +47,14 @@ const App = () => {
     }
     
     return (
-        <motion.div className='main-container' style={{backgroundImage:`url(${image})`}}
+        <motion.div className='main-container' style={{background:`${cardBg}`}}
             
         >
-            <input type='text' className='search' placeholder='Search city...' value={query} onChange={(e) => setQuery(e.target.value)} onKeyPress={search} />
+            <div className="widget-container" >
+                <input type='text' className='search' placeholder='Search city...' value={query} onChange={(e) => setQuery(e.target.value)} onKeyPress={search} />
            { weather.main && (
                <motion.div className='city' animate={{rotateZ:360 }}>
+                   <p>{date}</p>
                    <h2 className='city-name'>
                        <span>{weather.name}</span>
                        <sup>{weather.sys.country}</sup>
@@ -55,12 +65,23 @@ const App = () => {
                     </div>
                     <div className='info'>
                         <img className='city-icon' src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description}/>
-                        <p>{weather.weather[0].description}</p>
+                        <p style={{fontSize:"1.25rem"}}>{weather.weather[0].description}</p>
+                    </div>
+                    <div className='bottom-row'>
+                        <div className='bottom-column'>
+                            <p>Feels</p>
+                            <p>{Math.round(weather.main.feels_like)}<sup>&deg;c</sup></p> 
+                        </div>
+                        <div className='bottom-column'>
+                            <p>Wind</p>
+                            <p>{Math.round((weather.wind.speed)*(18/5))} km/h</p>
+                        </div>
                     </div>
 
                </motion.div>
            )
            }
+            </div>
         </motion.div>
     )
 }
