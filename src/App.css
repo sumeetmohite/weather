@@ -2,29 +2,28 @@ html,
 body,
 #root {
   font-family: 'Poppins', sans-serif;
-  background: #0a1f44;
+  background: #172046;
   color: #ffffff;
   height: 100%;
   margin: 0;
 }
 
 .main-container {
-  background: #b92b27; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #1565c0,
-    #b92b27
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #1565c0,
-    #b92b27
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #172046;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  flex-direction: column;
+  width: 100%;
+}
+.app-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 90%;
+  width: 90%;
+  border-radius: 2.5rem;
+  background: #09153e;
 }
 
 ::placeholder {
@@ -34,14 +33,13 @@ body,
 }
 
 .widget-container {
-  padding: 2rem;
-  align-items: center;
+  min-width: 60%;
+  height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4rem;
-  background: rgba(0, 0, 0, 0.5);
+  justify-content: flex-start;
+  border-radius: 2.5rem;
+  background: #09153e;
 }
 
 @media only screen and (min-width: 768px) {
@@ -61,23 +59,55 @@ body,
   }
 }
 
-.search {
-  font-size: 1.2rem;
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  outline: none;
-  height: 2.5rem;
-  width: 90%;
-  border-radius: 2rem;
+.left-sidebar {
+  height: 50%;
+  width: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+}
+.right-sidebar {
+  height: 80%;
+  width: 15%;
+  padding: 2rem;
+  margin-left: 1rem;
+  background: #101c43;
+  border-radius: 2.5rem;
+}
+.first-row,
+.second-row,
+.third-row {
+  margin: 0.25rem 0;
   border: none;
+}
+.input-wrapper {
+  width: 30%;
+  background: #6b29fa;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  padding: 0.5rem 0.5rem;
+}
+.search {
+  font-size: 1.25rem;
+  width: 90%;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  border: none;
+  background: inherit;
   color: #ffffff;
-  background: rgba(0, 0, 0, 0.5);
-  margin: 1rem 0 1rem 0;
-  padding: 0.5rem 0 0.4rem 0;
+}
+.search-icon {
+  cursor: pointer;
+  margin-top: 0.7rem;
+  margin-right: 0.5rem;
+  float: right;
 }
 
-.search:hover {
-  background: rgba(0, 0, 0, 0.75);
+.input-wrapper:hover {
+  background: #4a13c0;
 }
 
 .city {
@@ -85,10 +115,10 @@ body,
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   padding: 1rem 0 1rem 0;
   border-radius: 2rem;
-  background: rgba(0, 0, 0, 0.5);
+  background: #101c43;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -153,4 +183,7 @@ p {
 .bottom-column {
   text-align: center;
   width: 50%;
+}
+h2 {
+  font-weight: 100;
 }
