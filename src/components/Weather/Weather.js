@@ -19,7 +19,7 @@ const Weather = ({date,weather}) => {
                     <div className='bottom-row'>
                         <div className='bottom-column'>
                             <p>Feels</p>
-                            <p>{Math.round(weather.main.feels_like)}<sup>&deg;c</sup></p> 
+                            <p>{Math.round(weather.main.feels_like)}&deg;C</p> 
                         </div>
                         <div className='bottom-column'>
                             <p>Wind</p>
