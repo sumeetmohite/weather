@@ -5,7 +5,7 @@ const Weather = ({date,weather}) => {
     <motion.div className='city' animate={{rotateZ:360 }}>
                    <p>{date}</p>
                    <h2 className='city-name'>
-                       <span>{weather.name}</span>
+                       <span><strong>{weather.name}</strong></span>
                        <sup>{weather.sys.country}</sup>
                    </h2>
                     <div className='city-temp'>
@@ -14,7 +14,7 @@ const Weather = ({date,weather}) => {
                     </div>
                     <div className='info'>
                         <img className='city-icon' src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description}/>
-                        <p style={{fontSize:"1.25rem"}}>{weather.weather[0].description}</p>
+                        <p style={{fontSize:"1.5rem"}}>{weather.weather[0].description}</p>
                     </div>
                     <div className='bottom-row'>
                         <div className='bottom-column'>

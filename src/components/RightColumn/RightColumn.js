@@ -12,6 +12,18 @@ const RightColumn = ({weather,date}) => {
           <h3>{weather.weather[0].description}</h3>
          </div>
       )))} */}
+      {weather && (
+        <div className='bottom-row'>
+          <div className='bottom-column'>
+              <p>Feels</p>
+              <p>{Math.round(weather.main.feels_like)}&deg;C</p> 
+          </div>
+          <div className='bottom-column'>
+              <p>Wind</p>
+              <p>{Math.round((weather.wind.speed)*(18/5))} km/h</p>
+          </div>
+      </div>
+      )}
       
     </div>
   )

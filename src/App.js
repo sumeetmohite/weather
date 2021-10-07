@@ -20,13 +20,7 @@ const search = async(e) => {
     if(e.key === 'Enter'){
         const data = await fetchWeather(query);
         setWeather(data);
-        //console.log(data);
-        localStorage.clear()
-        
-        let city = data.name;
-        let weather = data.weather[0].description;
-        let temp = data.main.feels_like;
-        localStorage.setItem(city,weather)
+        console.log(data);
 
         let now = moment(data.dt*1000).format('MMMM Do YYYY, h:mm a');
         setDate(now)
@@ -65,7 +59,7 @@ return (
                 <FirstRow query={query} search={search} setQuery={setQuery} />
                 <SecondRow weather={weather} date={date}/>
             </div>
-            <RightColumn weather={weather} date={date}  />
+            {/* <RightColumn weather={weather} date={date}  /> */}
             </div>
     </motion.div>
 )
