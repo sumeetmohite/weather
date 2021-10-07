@@ -76,7 +76,7 @@ body,
   padding: 0.5rem 0.5rem;
 }
 .search {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   width: 100%;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
@@ -120,7 +120,7 @@ p {
 }
 
 .city-temp {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
   margin-top: 10px;
   color: #ffffff;
@@ -132,7 +132,7 @@ p {
 }
 
 .city-name {
-  font-size: 2em;
+  font-size: 1.75rem;
   text-transform: uppercase;
 }
 
