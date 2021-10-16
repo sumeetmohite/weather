@@ -6,7 +6,6 @@ import moment from 'moment';
 import FirstRow from './components/FirstRow/FirstRow';
 import SecondRow from './components/SecondRow/SecondRow';
 import LeftColumn from './components/LeftColumn/LeftColumn';
-import RightColumn from './components/RightColumn/RightColumn';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const App = () => {
@@ -59,7 +58,6 @@ return (
                 <FirstRow query={query} search={search} setQuery={setQuery} />
                 <SecondRow weather={weather} date={date}/>
             </div>
-            {/* <RightColumn weather={weather} date={date}  /> */}
             </div>
     </motion.div>
 )

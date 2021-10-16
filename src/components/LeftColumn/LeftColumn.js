@@ -1,11 +1,23 @@
-import { RiHomeLine, RiSettings4Line } from 'react-icons/ri'
-import { VscGraphLine } from 'react-icons/vsc'
+import { FaHome, FaMapMarkerAlt } from 'react-icons/fa';
+import { IoSettingsSharp } from 'react-icons/io5';
+import { GoGraph } from 'react-icons/go';
 const LeftColumn = () => {
   return (
     <div className="left-sidebar">
-      <RiHomeLine size={25} cursor='pointer'/>
-      <VscGraphLine size={22} cursor='pointer'/>
-      <RiSettings4Line size={27} cursor='pointer'/>
+      <div style={{textAlign:'center'}}>
+        <p style={{fontSize:'1.25rem', color:'white'}}><strong>RyderWeather</strong></p>
+      </div>
+      <div id="toggle-options" style={{marginTop:'2rem'}}>
+        <div className="toggle"><FaHome size={20} className="lefticons"/>Dashboard</div>
+        <div className="toggle"><GoGraph size={20} className="lefticons"/>Statistics</div>
+        <div className="toggle"><FaMapMarkerAlt size={20} className="lefticons"/>Map</div>
+        <div className="toggle"><IoSettingsSharp size={20} className="lefticons"/>Settings</div>
+      </div>
+      <div id="left-bottom">
+        <div id="default-weather-card">
+          
+        </div>
+      </div>
     </div>
   )
 }
