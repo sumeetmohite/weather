@@ -72,7 +72,6 @@ const ThirdRow = ({weather}) => {
     }
     
   }
-  console.log(data.datasets[0].data)
   
   return (
     <div className='third-row'>

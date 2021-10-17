@@ -18,8 +18,7 @@ const search = async(e) => {
     if(e.key === 'Enter'){
         const data = await fetchWeather(query);
         setWeather(data);
-        console.log(data);
-
+        //console.log(data);
         // let now = moment(data.list[0].dt*1000).format('MMMM Do YYYY, h:mm a');
         // setDate(now)
 
