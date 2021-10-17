@@ -56,7 +56,7 @@ const ThirdRow = ({weather}) => {
       for(let i=0; i<10; i++){
         let date = moment.unix(weather.list[i].dt).format("ddd, hA");
         data.labels.push(date);
-        console.log(Math.floor(weather.list[i].main.temp))
+        //console.log(Math.floor(weather.list[i].main.temp))
         data.datasets[0].data.push(Math.floor(weather.list[i].main.temp))
       }
     }else if(value===5){
@@ -64,7 +64,7 @@ const ThirdRow = ({weather}) => {
       if((i+1)%value===0){
         let date = moment.unix(weather.list[i].dt).format("ddd, hA");
         data.labels.push(date);
-        console.log(Math.floor(weather.list[i].main.temp))
+        //console.log(Math.floor(weather.list[i].main.temp))
         data.datasets[0].data.push(Math.floor(weather.list[i].main.temp))
         //fiveDates.push(date);
       }  
