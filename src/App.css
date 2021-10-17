@@ -53,9 +53,10 @@ body,
 
 .left-sidebar {
   height: 100%;
-  width: 20%;
+  width: 25%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   border-top-left-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
   background: #2980b9; /* fallback for old browsers */
@@ -69,6 +70,23 @@ body,
     #2c3e50,
     #2980b9
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#left-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+#default-weather-card {
+  background-color: #bbbbbb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 80%;
+  border-radius: 1rem;
 }
 #toggle-options {
   display: flex;
@@ -95,11 +113,16 @@ body,
 .first-row {
   height: 25%;
 }
+#image-list {
+  display: flex;
+}
 .second-row {
   display: flex;
   width: 100%;
   flex-direction: column;
   font-size: 14px;
+  margin-top: 2rem;
+  line-height: 0.25;
 }
 .second-row-data {
   display: flex;
@@ -160,28 +183,11 @@ body,
   background: #ffffff;
 }
 
-.city {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  width: 100%;
-  padding: 1rem 0 1rem 0;
-  border-radius: 2rem;
-  background: #101c43;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.city:hover {
-  transform: scale(1.03);
-}
-
 .city-temp {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-top: 10px;
-  color: #ffffff;
+  color: #121212;
   text-align: center;
 }
 
@@ -190,7 +196,7 @@ body,
 }
 
 .city-name {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
 }
 
@@ -199,6 +205,8 @@ body,
   margin-left: 0.2em;
   border-radius: 30px;
   text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
   color: #fff;
   background: #ff8c00;
 }
@@ -210,12 +218,14 @@ body,
 }
 
 .info {
+  font-size: 1rem;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   min-width: 100% relative;
   align-items: center;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .bottom-row {
