@@ -2,7 +2,7 @@ import { FaSearch } from 'react-icons/fa';
 const FirstRow = ({query,search,setQuery}) => {
   return (
     <div className='first-row'>
-      <div style={{padding: '2rem'}}>       
+      <div>       
         <input type='text' className='search' 
         placeholder='Search city'  
         value={query} 
@@ -10,7 +10,7 @@ const FirstRow = ({query,search,setQuery}) => {
         onKeyPress={search} />
         {/* <FaSearch className="search-icon"/> */}
 
-        <h2><strong>Weather Forecast</strong></h2>
+        <h2 style={{color:'#514e4d'}}><strong>Weather Forecast</strong></h2>
       </div>
     </div>
   )

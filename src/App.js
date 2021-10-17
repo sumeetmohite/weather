@@ -48,14 +48,15 @@ const search = async(e) => {
 
 return (
     <motion.div className='main-container'>
-        <div className="app-container">
-            <LeftColumn/>
-            <div className="widget-container" >
-                <FirstRow query={query} search={search} setQuery={setQuery} />
-                <SecondRow weather={weather}/>
-                <ThirdRow />
-            </div>
+      <div className="app-container">
+        <LeftColumn/>
+        <div className="right-column">
+          <div className="widget-container">
+            <FirstRow query={query} search={search} setQuery={setQuery} />
+            <SecondRow weather={weather}/>
+            <ThirdRow /></div> 
         </div>
+      </div>
     </motion.div>
 )
 }

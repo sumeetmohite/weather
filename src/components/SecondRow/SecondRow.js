@@ -19,15 +19,16 @@ const SecondRow = ({weather,date}) => {
     <div className='second-row'>
       {/* {weather.main && <Weather date={date} weather={weather}/>} */}
       {weather.list && (
-        <h4 style={{marginLeft:'1rem', fontSize:'1.2rem'}}>{weather.city.name}</h4>
+        <h4 style={{fontSize:'1.2rem',color:'#514e4d'}}>{weather.city.name}</h4>
       )}
         <div className="second-row-data">
         {weather.list && (
           fiveDays.map((e,index) =>
           (
-            <div key={index} style={{margin:'1rem', borderRadius:'1rem', padding:'0 0.5rem', textAlign: 'center', boxShadow: 'rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',width:'20%'}}>
+            <div key={index} style={{background: '#FDFDFD', borderRadius:'1rem', padding:'0 0.5rem', textAlign: 'center', boxShadow: 'rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',width:'15%'}}>
               <p>{fiveDates[index]}</p>
-              <p>{Math.round(e.main.temp)}<sup>&deg;</sup>C</p>
+              <img className='city-icon' src={`https://openweathermap.org/img/wn/${e.weather[0].icon}@2x.png`} alt={e.weather[0].description} style={{height:'3rem',width:'3rem',}}/>
+              <p><strong>{Math.round(e.main.temp)}<sup>&deg;</sup>C</strong></p>
               <p >{e.weather[0].main}</p>
             </div>
           
