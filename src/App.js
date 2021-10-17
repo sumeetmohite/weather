@@ -54,7 +54,7 @@ return (
           <div className="widget-container">
             <FirstRow query={query} search={search} setQuery={setQuery} />
             <SecondRow weather={weather}/>
-            <ThirdRow /></div> 
+            <ThirdRow weather={weather}/></div> 
         </div>
       </div>
     </motion.div>
