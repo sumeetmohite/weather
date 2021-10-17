@@ -25,19 +25,9 @@ const ThirdRow = ({weather}) => {
         {
           ticks: {
             beginAtZero: true,
-            font: {
-              family:'Manrope'
-            }
           },
         },
       ],
-    },
-    xAxes:{
-      ticks:{
-        font:{
-          family:'Manrope'
-        }
-      }
     },
     elements:{
       point:{
@@ -51,20 +41,10 @@ const ThirdRow = ({weather}) => {
                     // This more specific font property overrides the global property
                     font: {
                         size: 14,
-                        family: 'Manrope',
                         weight: 'bold'
                     }
                 }
             },
-            tooltip:{
-              bodyFont:{
-                family:'Manrope'
-              },
-              titleFont:{
-                family:'Manrope'
-              }
-            },
-            
         },
         height:400,
         responsive: true,
