@@ -20,7 +20,7 @@ const search = async(e) => {
         setWeather(data);
         const imagedata = await fetchImage(query);
         setImages([...images, {url:imagedata.results[0].urls.small,name:imagedata.results[0].description}])
-        console.log(images)
+        //console.log(images)
         setQuery('');
     }
 }
