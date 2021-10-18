@@ -19,11 +19,8 @@ const search = async(e) => {
         const data = await fetchWeather(query);
         setWeather(data);
         const imagedata = await fetchImage(query);
-        setImages([...images, imagedata.results[0].urls.small])
+        setImages([...images, {url:imagedata.results[0].urls.small,name:imagedata.results[0].description}])
         console.log(images)
-        // console.log(data);
-        // let now = moment(data.list[0].dt*1000).format('MMMM Do YYYY, h:mm a');
-        // setDate(now)
         setQuery('');
     }
 }
