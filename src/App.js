@@ -19,7 +19,7 @@ const search = async(e) => {
         const data = await fetchWeather(query);
         setWeather(data);
         const imagedata = await fetchImage(query);
-        setImages([...images, {url:imagedata.results[0].urls.small,name:imagedata.results[0].description}])
+        setImages([{url:imagedata.results[0].urls.small,name:imagedata.results[0].description}, ...images])
         //console.log(images)
         setQuery('');
     }
